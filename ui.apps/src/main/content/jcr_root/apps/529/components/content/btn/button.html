@@ -1,0 +1,10 @@
+
+<template data-sly-template.button>
+	<sly data-sly-use.button="com.auki.core.models.Button"></sly>
+    <h1>${button.title}</h1>
+	<button type="button">${button.title}</button>
+</template>
+<template data-sly-template.anchor>
+	<sly data-sly-use.button="com.auki.core.models.Button"></sly>
+	<a href="${button.link}">${button.title}</a>
+</template>

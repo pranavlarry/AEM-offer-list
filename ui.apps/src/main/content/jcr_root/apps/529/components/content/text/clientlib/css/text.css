@@ -1,0 +1,11 @@
+.button-bg--clear {
+	background: none;
+    border: 2px solid black;
+    height: 40px;
+}
+
+.button-bg--red {
+	background: red;
+    border: 2px solid black;
+    height: 40px;
+}
