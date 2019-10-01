@@ -7,18 +7,30 @@ import org.apache.sling.api.resource.Resource;
 //import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.*;
 
+import com.auki.core.services.FullNameService;
+
 @Model(adaptables = Resource.class,defaultInjectionStrategy= DefaultInjectionStrategy.OPTIONAL)
 public class Test {
+	
+	@Inject
+	private FullNameService fullNameService;
+	
 	@Inject 
 	private String path;
+	
 	@Inject @Default(values="enter some text")
 	private String text;
+	
 	private String filename;
+	
 	@PostConstruct
 	protected void init() {
-		setFilename();
-//		setText("hello there");
+//		setFilename();
+////		setText("hello there");
+		filename = fullNameService.fullName();
+		
 	}
+	
 	public String getPath() {
 		return path;
 	}
@@ -34,9 +46,9 @@ public class Test {
 	public String getFilename() {
 		return this.filename;
 	}
-	public void setFilename() {
-		this.filename = this.path.substring( this.path.lastIndexOf('/')+1, this.path.lastIndexOf('.'));
-	}
+//	public void setFilename() {
+//		this.filename = this.path.substring( this.path.lastIndexOf('/')+1, this.path.lastIndexOf('.'));
+//	}
 	
 	
 	
