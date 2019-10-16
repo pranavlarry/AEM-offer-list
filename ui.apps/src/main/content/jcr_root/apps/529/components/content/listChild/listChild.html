@@ -1,0 +1,9 @@
+<!---To display the children’s list under a parent page path using sling model -->
+
+<h1>List Children Dynamically</h1>
+<sly data-sly-use.pageListing="com.auki.core.models.MainOffer"/>
+	<sly data-sly-list.iteratePageList="${ pageListing.details}">
+		<h2>${ iteratePageList.title}</h2>
+		<p>${ iteratePageList.description}</p>
+    </sly>
+</sly>

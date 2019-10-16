@@ -1,9 +1,24 @@
 <sly
 	data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
 	data-sly-call="${clientLib.css @categories = 'footer'}"></sly>
+<sly data-sly-use.fullname="com.auki.core.models.Name">
+</sly>
 <sly data-sly-use.test="com.auki.core.models.Test">
 </sly>
-<div>${test.text} <br> ${test.path} <br>File name: ${test.filename}</div>
+<div>${test.text} <br> ${test.path} <br>Fullname: ${fullname.value}, ${fullname.name}</div>
+<ul>
+    <sly data-sly-list.item="${fullname.details}">
+        <li>${item.image}</li>
+		<li>${item.description}</li>
+    </sly>
+</ul>
+
+
+
+
+
+
+
 <div class="content">
 	<footer class="footer">
 		<div class="footer__first">
